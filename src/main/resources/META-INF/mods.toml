@@ -1,0 +1,26 @@
+modLoader="javafml"
+loaderVersion="[66,)"
+license="All Rights Reserved"
+clientSideOnly=true
+
+[[mods]]
+modId="visualpanel"
+version="1.0.0"
+displayName="Visual Panel"
+authors="Vladiha"
+description='''Client-side visual panel: HUD with coordinates, health, armor and biome, a drag-and-drop HUD editor and a dark turquoise settings UI.
+Open the panel with the V key. Languages: EN, RU, UA, PL, DE.'''
+
+[[dependencies.visualpanel]]
+    modId="forge"
+    mandatory=true
+    versionRange="[66,)"
+    ordering="NONE"
+    side="CLIENT"
+
+[[dependencies.visualpanel]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[26.3,26.4)"
+    ordering="NONE"
+    side="CLIENT"

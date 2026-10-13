@@ -1,1 +1,16 @@
-# Vladiha-Visuals-Update
+# Visual Panel
+
+Клієнтський мод для Minecraft Forge **26.3** (Java 25).
+
+- Клавіша **V** відкриває панель (вкладки Visuals / HUD / Settings, темна тема з бірюзовими акцентами, анімації).
+- HUD: координати, здоров'я, броня, біом.
+- Редактор HUD: перетягування, масштаб (колесо миші або слайдер), прозорість, колір (палітра + R/G/B), показ/приховування.
+- Visuals: FOV, яскравість (0–100 %, ванільний діапазон), дальність прорисовки.
+- Мови в моді: EN, RU, UA, PL, DE (перемикання на вкладці Settings).
+- Налаштування зберігаються локально в `config/visualpanel.json`. Жодних серверних функцій.
+
+## Збірка
+GitHub → вкладка **Actions** → *Build* → завантажте артефакт `visualpanel-jar`.
+Workflow сам підбирає останню збірку Forge 26.3 з maven.minecraftforge.net.
+
+Локально: Java 25 і `./gradlew build -Pforge_version=<збірка Forge 26.3>` (JAR у `build/libs`).

@@ -1,0 +1,44 @@
+plugins {
+    id 'java'
+    id 'idea'
+    id 'eclipse'
+    id 'net.minecraftforge.gradle' version '[7.0.17,8)'
+}
+
+version = '1.0.0'
+group = 'com.vladiha.visualpanel'
+
+// Minecraft 26.1+ runs on Java 25.
+java.toolchain.languageVersion = JavaLanguageVersion.of(25)
+
+base {
+    archivesName = 'visualpanel'
+}
+
+minecraft {
+    runs {
+        configureEach {
+            workingDir = layout.projectDirectory.dir('run')
+            systemProperty 'eventbus.api.strictRuntimeChecks', 'true'
+        }
+
+        // Visual Panel is a client-only mod.
+        register('client')
+    }
+}
+
+repositories {
+    minecraft.mavenizer(it)
+    maven fg.forgeMaven
+    maven fg.minecraftLibsMaven
+    mavenCentral()
+}
+
+dependencies {
+    implementation minecraft.dependency("net.minecraftforge:forge:${project.property('mc_version')}-${project.property('forge_version')}")
+    annotationProcessor 'net.minecraftforge:eventbus-validator:' + (project.findProperty('eventbus_version') ?: '7.0.+')
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+}
